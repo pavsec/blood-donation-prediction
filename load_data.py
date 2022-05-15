@@ -1,5 +1,6 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
 file = 'dataset/transfusion.data'
 
@@ -24,6 +25,7 @@ def load_data():
 def split_data(data, labels=-1, test_size=0.50):
     array = data.values
     X = array[:, :labels]
+    X = scale_data(X)
     Y = array[:, labels]
     Y = Y.astype('int')
 
@@ -31,6 +33,12 @@ def split_data(data, labels=-1, test_size=0.50):
     X_predict, X_fit, Y_predict, Y_fit = train_test_split(X_validation, Y_validation, test_size=0.5)
 
     return X_train, X_fit, X_predict, Y_train, Y_fit, Y_predict
+
+def scale_data(data):
+    scaler = StandardScaler()
+    scaler.fit(data)
+    data = scaler.transform(data)
+    return data
 
 if __name__ == '__main__':
     data = load_data()
