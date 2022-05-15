@@ -1,0 +1,32 @@
+C:\Python39\python.exe D:/fax/Collage/10/pui/projekt/svm.py
+[[129  13]
+ [ 31  14]]
+              precision    recall  f1-score   support
+
+           0       0.81      0.91      0.85       142
+           1       0.52      0.31      0.39        45
+
+    accuracy                           0.76       187
+   macro avg       0.66      0.61      0.62       187
+weighted avg       0.74      0.76      0.74       187
+
+Total SVC model accuracy: 0.7647058823529411
+Total SVC model kappa score: 0.25430487583831785
+
+
+C:\Python39\python.exe D:/fax/Collage/10/pui/projekt/mlp.py
+[[136  13]
+ [ 23  15]]
+              precision    recall  f1-score   support
+
+           0       0.86      0.91      0.88       149
+           1       0.54      0.39      0.45        38
+
+    accuracy                           0.81       187
+   macro avg       0.70      0.65      0.67       187
+weighted avg       0.79      0.81      0.80       187
+
+Total MLP model accuracy: 0.8074866310160428
+Total SVC model kappa score: 0.3409046406892501
+
+Process finished with exit code 0
