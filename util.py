@@ -5,7 +5,7 @@ from sklearn.model_selection import StratifiedKFold, GridSearchCV
 from sklearn.metrics import accuracy_score, make_scorer, cohen_kappa_score
 
 ds_name = 'blood_transfusion'
-model_name = 'mlp'
+model_name = 'svm'
 
 def grid_search(model, X_train, Y_train, param_grid):
 
@@ -19,7 +19,7 @@ def grid_search(model, X_train, Y_train, param_grid):
                                return_train_score=True, error_score='raise')
     grid_search.fit(X_train, Y_train)
 
-    print_grid_search_results(grid_search, ds_name, model_name, model, len(Y_train), list(param_grid.keys())[-2])
+    print_grid_search_results(grid_search, ds_name, model_name, model, len(Y_train), list(param_grid.keys())[-1])
 
     return
 
@@ -88,7 +88,7 @@ def print_grid_search_results(grid_search, ds_name, model_name, model, set_len, 
     plt.xlabel(xlabel)
     plt.ylabel(metric)
     plt.title(metric + ' for ' + xlabel +' on  ' + ds_name)
-    plt.savefig('img/' + model_name + '/mlp_' + metric + '_' + xlabel + '_' + ds_name)
+    plt.savefig('img/' + model_name + '/svm_' + metric + '_' + xlabel + '_' + ds_name)
     plt.clf()
 
     print('\n\n')
@@ -109,7 +109,7 @@ def print_grid_search_results(grid_search, ds_name, model_name, model, set_len, 
     plt.xlabel(xlabel)
     plt.ylabel(metric)
     plt.title(metric + ' for ' + xlabel +' on  ' + ds_name)
-    plt.savefig('img/' + model_name + '/mlp_' + metric + '_' + xlabel + '_' + ds_name)
+    plt.savefig('img/' + model_name + '/svm_' + metric + '_' + xlabel + '_' + ds_name)
 
     print(metric + ' TEST - ', end='')
     print(means_kap_tst)

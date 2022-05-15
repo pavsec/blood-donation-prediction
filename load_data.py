@@ -50,4 +50,4 @@ def scale_data(data):
 #     print(np.count_nonzero(Y_train == 1))
 #     print(np.count_nonzero(Y_test == 0))
 #     print(np.count_nonzero(Y_test == 1))
-#     X_train, X_fit, X_predict, Y_train, Y_fit, Y_predict = split_data(data)
+    # X_train, X_fit, X_predict, Y_train, Y_fit, Y_predict = split_data(data)
