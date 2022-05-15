@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -30,9 +31,10 @@ def split_data(data, labels=-1, test_size=0.50):
     Y = Y.astype('int')
 
     X_train, X_validation, Y_train, Y_validation = train_test_split(X, Y, test_size=test_size)
-    X_predict, X_fit, Y_predict, Y_fit = train_test_split(X_validation, Y_validation, test_size=0.5)
+    # X_predict, X_fit, Y_predict, Y_fit = train_test_split(X_validation, Y_validation, test_size=0.5)
 
-    return X_train, X_fit, X_predict, Y_train, Y_fit, Y_predict
+    # return X_train, X_fit, X_predict, Y_train, Y_fit, Y_predict
+    return X_train, X_validation, Y_train, Y_validation
 
 def scale_data(data):
     scaler = StandardScaler()
@@ -40,6 +42,12 @@ def scale_data(data):
     data = scaler.transform(data)
     return data
 
-if __name__ == '__main__':
-    data = load_data()
-    X_train, X_fit, X_predict, Y_train, Y_fit, Y_predict = split_data(data)
+# if __name__ == '__main__':
+#     data = load_data()
+#     print(data['blood donated in March 2007'].value_counts())
+#     X_train, X_test, Y_train, Y_test = split_data(data, test_size=0.25)
+#     print(np.count_nonzero(Y_train == 0))
+#     print(np.count_nonzero(Y_train == 1))
+#     print(np.count_nonzero(Y_test == 0))
+#     print(np.count_nonzero(Y_test == 1))
+#     X_train, X_fit, X_predict, Y_train, Y_fit, Y_predict = split_data(data)
