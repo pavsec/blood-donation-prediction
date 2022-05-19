@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -42,12 +43,26 @@ def scale_data(data):
     data = scaler.transform(data)
     return data
 
+def plot_dataset(data):
+    figure, axis = plt.subplots(2, 2)
+    axis[0, 0].hist(data['Recency (months)'])
+    axis[0, 0].set_title('Recency (months)')
+    axis[0, 1].hist(data['Frequency (times)'])
+    axis[0, 1].set_title('Frequency (times)')
+    axis[1, 0].hist(data['Monetary (c.c. blood)'])
+    axis[1, 0].set_title('Monetary (c.c. blood)')
+    axis[1, 1].hist(data['Time (months)'])
+    axis[1, 1].set_title('Time (months)')
+    plt.show()
+
 # if __name__ == '__main__':
 #     data = load_data()
+#     print(data)
 #     print(data['blood donated in March 2007'].value_counts())
 #     X_train, X_test, Y_train, Y_test = split_data(data, test_size=0.25)
 #     print(np.count_nonzero(Y_train == 0))
 #     print(np.count_nonzero(Y_train == 1))
 #     print(np.count_nonzero(Y_test == 0))
 #     print(np.count_nonzero(Y_test == 1))
-    # X_train, X_fit, X_predict, Y_train, Y_fit, Y_predict = split_data(data)
+#     X_train, X_fit, X_predict, Y_train, Y_fit, Y_predict = split_data(data)
+#     plot_dataset(data)
