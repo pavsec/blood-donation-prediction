@@ -53,6 +53,12 @@ def plot_dataset(data):
     axis[1, 0].set_title('Monetary (c.c. blood)')
     axis[1, 1].hist(data['Time (months)'])
     axis[1, 1].set_title('Time (months)')
+    plt.subplots_adjust(left=0.1,
+                    bottom=0.1,
+                    right=0.9,
+                    top=0.9,
+                    wspace=0.4,
+                    hspace=0.4)
     plt.show()
 
 # if __name__ == '__main__':
@@ -66,3 +72,4 @@ def plot_dataset(data):
 #     print(np.count_nonzero(Y_test == 1))
 #     X_train, X_fit, X_predict, Y_train, Y_fit, Y_predict = split_data(data)
 #     plot_dataset(data)
+#     print(data.head(5))

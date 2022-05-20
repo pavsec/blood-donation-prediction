@@ -40,4 +40,4 @@ if __name__ == '__main__':
     print(classification_report(Y_test, predictions))
 
     print('Total MLP model accuracy: ' + str(accuracy_score(Y_test, predictions, normalize=True,  sample_weight=None)))
-    print('Total SVC model kappa score: ' + str(cohen_kappa_score(Y_test, predictions, sample_weight=None)))
+    print('Total MLP model kappa score: ' + str(cohen_kappa_score(Y_test, predictions, sample_weight=None)))
